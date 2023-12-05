@@ -1,6 +1,8 @@
 const contacts = require("./contacts.js");
-const yargs = require("yargs");
-const { hideBin } = require("yargs/helpers");
+
+// const {progran} = require("commander")- через commander(не забути інсталювати commander)
+const yargs = require("yargs"); //через yargs
+const { hideBin } = require("yargs/helpers"); //через yargs
 
 async function invokeAction({ action, id, name, email, phone }) {
   switch (action) {
@@ -28,7 +30,19 @@ async function invokeAction({ action, id, name, email, phone }) {
       console.warn("\x1B[31m Unknown action type!");
   }
 }
+// через commander
+// program
+//.option("--action, <type>")
+//.option("--id, <type>")
+//.option("--email, <type>")
+//.option("--phone, <type>")
+//.option("--name, <type>")
 
-const arr = hideBin(process.argv);
-const { argv } = yargs(arr);
-invokeAction(argv);
+// program.parse
+
+// const=program.opts();
+// invokeAction(options)
+
+const arr = hideBin(process.argv); //через yargs
+const { argv } = yargs(arr); //через yargs
+invokeAction(argv); //через yargs
